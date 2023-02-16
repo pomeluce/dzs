@@ -27,7 +27,7 @@ case ${HIST_STAMPS-} in
 esac
 
 ## History file configuration
-HISTFILE="$DZS/cache"
+HISTFILE="$DZS/cache/dzsHistory"
 HISTSIZE=50000
 SAVEHIST=10000
 
