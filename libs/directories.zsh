@@ -32,6 +32,7 @@ function d () {
 compdef _dirs d
 
 # List directory contents
+alias ls='ls --color=auto'
 alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
