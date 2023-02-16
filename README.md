@@ -1,3 +1,23 @@
+## dzs
+```
+代码 fork 自 oh-my-zsh, 对 oh-my-zsh 进行大幅度精简, 只保留部分需要代码, 并对 fzf p10k z.lua 等进行了整合
+, 添加了 git 脚本, 更轻便的执行 git 命令.
+```
+## 目录结构
+```
+.
+├── cache
+├── config
+├── libs
+└── plugins
+    ├── extract
+    ├── fzf-tab
+    ├── powerlevel10k
+    ├── sudo
+    ├── z.lua
+    ├── zsh-autosuggestions
+    └── zsh-syntax-highlighting
+```
 ## 可选配置
 
 | 参数               | 默认值                              | 说明                       |

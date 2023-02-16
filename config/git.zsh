@@ -1,9 +1,9 @@
 export GIT_TERMINAL_PROMPT=1
 
 # git log 颜色控制
-hashColor='#98c379'
+hashColor='#4caf50'
 headColor='#ef6c00'
-contentColor="#ffeb3b"
+contentColor="#ffd54f"
 dateColor="#2196f3"
 authorColor="#ff5252"
 
