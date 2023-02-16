@@ -1,9 +1,16 @@
 ## DZS
 ```
-代码 fork 自 oh-my-zsh, 对 oh-my-zsh 进行大幅度精简, 只保留部分需要代码, 并对 fzf p10k z.lua 等进行了整合
-, 添加了 git 脚本, 更轻便的执行 git 命令.
+基于 omz 的源码构建的 zsh 框架, 对 omz 的源码进行了大幅度精简, 根据功能需要整合常用插件, 和部分脚本, 让 zsh 使用更加顺手
+
+1. extract 简化解压操作
+2. sudo 快捷执行 sudo 命令
+3. fzf-tab 更智能的 tab 补全
+4. z.lua 常用目录快捷跳转
+5. zsh-autosuggestions       \
+                              zsh 提示高亮
+6. zsh-syntax-highlighting   /
 ```
-## 目录结构
+### 目录结构
 ```
 .
 ├── cache
@@ -38,12 +45,21 @@
 │   └── zsh-syntax-highlighting
 └── README.md
 ```
-## 环境依赖
+### 环境依赖
 ```
 1. 默认 shell 必须为 zsh
-2. 需要安装 rg, exa, bat, fzf, ueberzug
+2. 需要安装 rg, exa, bat, fzf, ueberzug, git
 ```
-## 可选配置
+
+### 安装使用
+```zsh
+# 选择一个目录执行如下命令拉取代码
+git clone https://github.com/in-depth-1/dzs.git
+
+# 执行如下命令进行配置 ([path] 为拉取代码的目录)
+echo 'source [path]/dzs/init.zsh >> ~/.zshrc'
+```
+### 可选配置
 
 | 参数               | 默认值                              | 说明                       |
 | ------------------ | ----------------------------------- | -------------------------- |
@@ -52,7 +68,7 @@
 | CASE_SENSITIVE     | false                               | 设置大小写是否敏感         |
 | HYPHEN_INSENSITIVE | false                               | 设置连字符不敏感           |
 
-## git 命令
+### git 命令
 <!-- ``` -->
 * gc 'url' : git clone 'url'
 * gco : git checkout
