@@ -48,7 +48,7 @@
 ### 环境依赖
 ```
 1. 默认 shell 必须为 zsh
-2. 需要安装 rg, exa, bat, fzf, ueberzug, git
+2. 需要安装 fd, exa, bat, fzf, ueberzug, git
 ```
 
 ### 安装使用
