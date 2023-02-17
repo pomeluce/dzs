@@ -1,4 +1,4 @@
-cache/*
+cache/
 plugins/fzf-tab
 plugins/powerlevel10k
 plugins/z.lua
