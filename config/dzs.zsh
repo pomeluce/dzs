@@ -7,9 +7,10 @@ source $DZS/libs/history.zsh
 source $DZS/libs/key-bindings.zsh
 source $DZS/libs/termsupport.zsh
 source $DZS/libs/theme-appearence.zsh
+source $DZS/theme/dzs.zsh-theme
 source $DZS/plugins/extract/extract.plugin.zsh
 source $DZS/plugins/fzf-tab/fzf-tab.zsh
-source $DZS/plugins/powerlevel10k/powerlevel10k.zsh-theme
+[[ $P10K ]] && source $DZS/plugins/powerlevel10k/powerlevel10k.zsh-theme
 source $DZS/plugins/sudo/sudo.plugin.zsh
 source $DZS/plugins/z.lua/z.lua.plugin.zsh
 source $DZS/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

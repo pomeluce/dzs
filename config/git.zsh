@@ -7,7 +7,7 @@ contentColor="#ffd54f"
 dateColor="#2196f3"
 authorColor="#ff5252"
 
-alias gc='git clone ${1-2}'
+alias gc='git clone ${1} ${2}'
 alias gco='git checkout'
 alias gpu='git push origin $(git symbolic-ref --short -q HEAD)'
 alias gpd='git pull origin $(git symbolic-ref --short -q HEAD) --ff-only'
