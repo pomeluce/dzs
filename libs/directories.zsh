@@ -21,6 +21,9 @@ alias 9='cd -9'
 
 alias md='mkdir -p'
 alias rd=rmdir
+alias rmf='rm -rf'
+alias lnk='ln -s'
+alias rlnk='ln -snf'
 
 function d () {
   if [[ -n $1 ]]; then
