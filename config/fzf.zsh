@@ -2,7 +2,7 @@
 # try setting RUNEWIDTH_EASTASIAN to 1. If the border is still not properly rendered, set --no-unicode.
 export RUNEWIDTH_EASTASIAN=0
 
-export FZF_DEFAULT_OPTS="--height 25 --layout=reverse --history=$DZS/cache/fzfhistory"
+export FZF_DEFAULT_OPTS="--height 16 --layout=reverse --history=$DZS/cache/fzfhistory"
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist,vendor} --type f"
 export FZF_PREVIEW_COMMAND='zsh $DZS/libs/file-preview.zsh {}'
 
@@ -24,5 +24,5 @@ zstyle ':fzf-tab:complete:git-log:*' fzf-preview 'git log --color=always $word'
 zstyle ':fzf-tab:complete:git-show:*' fzf-preview 'git show --color=always $word'
 zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview '[ -f "$realpath" ] && git diff --color=always $word || git log --color=always $word'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
-zstyle ':fzf-tab:complete:*:*' fzf-flags --height=25
+zstyle ':fzf-tab:complete:*:*' fzf-flags --height=16
 export LESSOPEN='| zsh $DZS/libs/file-preview.zsh %s'

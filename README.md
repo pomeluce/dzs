@@ -29,11 +29,9 @@
 │   ├── directories.zsh
 │   ├── dzs.zsh
 │   ├── file-preview.zsh
-│   ├── get-cursor.sh
 │   ├── git.zsh
 │   ├── grep.zsh
 │   ├── history.zsh
-│   ├── img-preview.sh
 │   ├── key-bindings.zsh
 │   ├── termsupport.zsh
 │   └── theme-appearence.zsh
