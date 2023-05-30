@@ -20,10 +20,16 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 alias md='mkdir -p'
-alias rd=rmdir
+alias rd='rmdir'
 alias rmf='rm -rf'
 alias lnk='ln -s'
 alias rlnk='ln -snf'
+
+# deveop commands alias
+command -v nvim &> /dev/null && alias vim='nvim'
+command -v npm &> /dev/null && alias n='npm'
+command -v pnpm &> /dev/null && alias p='pnpm'
+command -v yarn &> /dev/null && alias y='yarn'
 
 function d () {
   if [[ -n $1 ]]; then
