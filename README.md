@@ -92,4 +92,7 @@ echo 'source [path]/dzs/init.zsh >> ~/.zshrc'
 - gam 'commit': git add --all && git commit -m "commit"
 - gll: git log (short)
 - glla: git log (long)
+- grv: git remote -v
+- grs: git remote set-url origin url
+- gra: git remote add origin url
 <!-- ``` -->

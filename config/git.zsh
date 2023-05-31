@@ -16,6 +16,9 @@ alias gs='git --no-pager status'
 alias gss='git --no-pager status -s'
 alias gpt='git push origin --tags'
 alias gtl='git tag -n --sort=taggerdate'
+alias grv='git remote -v'
+alias grs='git remote set-url origin ${1}'
+alias gra='git remote add origin ${1}'
 ga() { git add "$*" }
 gt() { git tag -a $1 -m "$2" }
 gm() { git commit -m "$*" }
