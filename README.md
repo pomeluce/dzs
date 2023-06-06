@@ -58,7 +58,7 @@
 
 ```zsh
 # 选择一个目录执行如下命令拉取代码
-git clone https://github.com/in-depth-1/dzs.git
+git clone https://github.com/pomeluce/dzs.git
 
 # 执行如下命令进行配置 ([path] 为拉取代码的目录)
 echo 'source [path]/dzs/init.zsh >> ~/.zshrc'
