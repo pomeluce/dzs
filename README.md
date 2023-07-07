@@ -1,7 +1,8 @@
 ## DZS
 
 ```
-基于 omz 的源码构建的 zsh 框架, 对 omz 的源码进行了大幅度精简, 根据功能需要整合常用插件, 和部分脚本, 让 zsh 使用更加顺手
+基于 omz 的源码构建的 zsh 框架, 对 omz 的源码进行了大幅度精简, 根据功能需要整合常用插件, 和部分脚本,
+让 zsh 使用更加顺手
 
 1. extract 简化解压操作
 2. sudo 快捷执行 sudo 命令
@@ -10,6 +11,7 @@
 5. zsh-autosuggestions       \
                               zsh 提示高亮
 6. zsh-syntax-highlighting   /
+7. ls 文件展示升级 (可选)
 ```
 
 ### 目录结构

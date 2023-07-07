@@ -41,8 +41,18 @@ function d () {
 compdef _dirs d
 
 # List directory contents
-alias ls='ls --color=auto'
-alias lsa='ls -lah'
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
+if command -v lsd &> /dev/null; then
+  alias l='lsd -lah'
+  alias ll='lsd -lh'
+  alias ls='lsd --color=auto'
+  alias la='lsd -lAh'
+  alias lsa='lsd -lah'
+  alias lt='lsd -l --tree'
+  alias ltd='lsd -l --tree --depth ${1}'
+else
+  alias ls='ls --color=auto'
+  alias lsa='ls -lah'
+  alias l='ls -lah'
+  alias ll='ls -lh'
+  alias la='ls -lAh'
+fi
