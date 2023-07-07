@@ -57,21 +57,26 @@
 ### 安装使用
 
 ```zsh
-# 选择一个目录执行如下命令拉取代码
-git clone https://github.com/pomeluce/dzs.git
+# 使用下面的命令拉取仓库
+git clone https://github.com/pomeluce/dzs.git ~/.config/dzs
 
-# 执行如下命令进行配置 ([path] 为拉取代码的目录)
-echo 'source [path]/dzs/init.zsh >> ~/.zshrc'
+# 执行如下命令进行配置
+echo 'source ~/.config/dzs/init.zsh >> ~/.zshrc'
+
+# 执行如下命令重新加载终端环境
+source ~/.zshrc
 ```
 
 ### 可选配置
 
-| 参数           | 默认值                              | 说明                        |
-| -------------- | ----------------------------------- | --------------------------- |
-| EXC_FOLDERS    | {.bzr,CVS,.git,.hg,.svn,.idea,.tox} | 设置 grep 命令要忽略的目录  |
-| ZSH_CACHE_DIR  | $DZS/cache                          | 设置 zsh 的 cache 目录      |
-| CASE_SENSITIVE | false                               | 设置大小写是否敏感          |
-| P10K           | fasle                               | 是否开启 powerlevel10k 主题 |
+| 参数             | 默认值                              | 说明                                   |
+| ---------------- | ----------------------------------- | -------------------------------------- |
+| EXC_FOLDERS      | {.bzr,CVS,.git,.hg,.svn,.idea,.tox} | 设置 grep 命令要忽略的目录             |
+| ZSH_CACHE_DIR    | $DZS/cache                          | 设置 zsh 的 cache 目录                 |
+| CASE_SENSITIVE   | false                               | 设置大小写是否敏感                     |
+| P10K             | fasle                               | 是否开启 powerlevel10k 主题            |
+| DZS_IN_LASTDIR   | false                               | 是否在启动时自动进入上次目录           |
+| DZS_HISTORY_SHOW | true                                | 绑定 Ctrl + r 快捷键, 展示搜索历史命令 |
 
 ### git 命令
 
