@@ -11,53 +11,78 @@
 5. zsh-autosuggestions       \
                               zsh 提示高亮
 6. zsh-syntax-highlighting   /
-7. ls 文件展示升级 (可选)
+7. ls 文件展示升级
+8. 图片预览
 ```
 
 ### 目录结构
 
 ```
-.
-├── cache
-│   ├── cursor
-│   └── fzfhistory
-├── config
-│   ├── dzs.zsh
-│   ├── fzf.zsh
-│   └── git.zsh
-├── init.zsh
-├── libs
-│   ├── completion.zsh
-│   ├── directories.zsh
-│   ├── dzs.zsh
-│   ├── file-preview.zsh
-│   ├── git.zsh
-│   ├── grep.zsh
-│   ├── history.zsh
-│   ├── key-bindings.zsh
-│   ├── termsupport.zsh
-│   └── theme-appearence.zsh
-├── LICENSE
-├── plugins
-│   ├── extract
-│   ├── fzf-tab
-│   ├── powerlevel10k
-│   ├── sudo
-│   ├── z.lua
-│   ├── zsh-autosuggestions
-│   └── zsh-syntax-highlighting
-└── README.md
+ .
+├──  cache
+│   ├──  currentdir
+│   ├──  cursor
+│   ├──  dzsHistory
+│   ├──  fzfhistory
+│   └──  npe
+├──  config
+│   ├──  dzs.zsh
+│   ├──  fzf.zsh
+│   └──  git.zsh
+├──  init.zsh
+├──  libs
+│   ├──  completion.zsh
+│   ├──  directories.zsh
+│   ├──  dzs.zsh
+│   ├──  file-preview.zsh
+│   ├──  get-cursor.zsh
+│   ├──  git.zsh
+│   ├──  grep.zsh
+│   ├──  history.zsh
+│   ├──  img-preview.zsh
+│   ├──  key-bindings.zsh
+│   ├──  termsupport.zsh
+│   └──  theme-appearence.zsh
+├──  LICENSE
+├──  plugins
+│   ├──  extract
+│   ├──  fzf-tab
+│   ├──  sudo
+│   ├──  z.lua
+│   ├──  zsh-autosuggestions
+│   └──  zsh-syntax-highlighting
+├──  README.md
+└──  theme
+    └──  dzs.zsh-theme
 ```
 
 ### 环境依赖
 
 ```
 1. 默认 shell 必须为 zsh
-2. 需要安装 fd, exa, bat, fzf, ueberzug, git
+2. 需要安装 fd, exa, bat, fzf, ueberzug, lsd, git
 ```
 
 ### 安装使用
 
+1. 切换终端的默认 shell 为 zsh
+```zsh
+# 查看 zsh  路径
+chsh -l | grep zsh
+
+# 切换 shell, 具体 shell 路径以上一条命令查找到的 zsh 路径为准
+chsh -s /usr/bin/zsh
+```
+
+2. 安装环境依赖项, 某些功能依赖于下面的环境, **可选**
+```zsh
+# Arch Linux 直接安装
+yay/pacman -S fd exa bat fzf ueberzug lsd git
+
+# 其他 Linux 发行版以各自对应的包管理器为准进行安装
+```
+
+3. 安装 dzs
 ```zsh
 # 使用下面的命令拉取仓库
 git clone https://github.com/pomeluce/dzs.git ~/.config/dzs

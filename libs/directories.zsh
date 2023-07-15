@@ -47,8 +47,10 @@ if command -v lsd &> /dev/null; then
   alias ls='lsd --color=auto'
   alias la='lsd -lAh'
   alias lsa='lsd -lah'
-  alias lt='lsd -l --tree'
-  alias ltd='lsd -l --tree --depth ${1}'
+  alias lt='lsd --tree'
+  alias lta='lsd -a --tree'
+  alias ltd='lsd --tree --depth ${1}'
+  alias ltda='lsd -a --tree --depth ${1}'
 else
   alias ls='ls --color=auto'
   alias lsa='ls -lah'

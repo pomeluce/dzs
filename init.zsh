@@ -25,6 +25,19 @@ if [[ ! -d $DZS/plugins/zsh-syntax-highlighting ]]; then
   git clone 'https://github.com/zsh-users/zsh-syntax-highlighting.git' $DZS/plugins/zsh-syntax-highlighting &>/dev/null
 fi
 
+if [[ -f "$DZS/plugins/fzf-tab/fzf-tab.zsh" ]]; then
+  local start_line
+  local end_line
+
+  start_line=$(awk '/fzf-tab-complete\(\) {/{print NR;exit}' "$DZS/plugins/fzf-tab/fzf-tab.zsh")
+  end_line=$(awk '/# this name must be ugly to avoid clashes/{print NR;exit}' "$DZS/plugins/fzf-tab/fzf-tab.zsh")
+
+  # 在指定行之间插入文本
+  if ((end_line == start_line + 1)); then
+    sed -i "${end_line} { /^$/! s|^|  zsh \$DZS/libs/get-cursor.zsh\n|; }" "$DZS/plugins/fzf-tab/fzf-tab.zsh"
+  fi
+fi
+
 source $DZS/config/dzs.zsh
 source $DZS/config/git.zsh
 source $DZS/config/fzf.zsh
