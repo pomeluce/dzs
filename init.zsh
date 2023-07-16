@@ -26,9 +26,6 @@ if [[ ! -d $DZS/plugins/zsh-syntax-highlighting ]]; then
 fi
 
 if [[ -f "$DZS/plugins/fzf-tab/fzf-tab.zsh" ]]; then
-  local start_line
-  local end_line
-
   start_line=$(awk '/fzf-tab-complete\(\) {/{print NR;exit}' "$DZS/plugins/fzf-tab/fzf-tab.zsh")
   end_line=$(awk '/# this name must be ugly to avoid clashes/{print NR;exit}' "$DZS/plugins/fzf-tab/fzf-tab.zsh")
 
