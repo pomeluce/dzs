@@ -60,7 +60,7 @@
 
 ```
 1. 默认 shell 必须为 zsh
-2. 需要安装 fd, exa, bat, fzf, ueberzug, lsd, git
+2. 需要安装 fd, exa, bat, fzf, ueberzug, lsd, git, lua
 ```
 
 ### 安装使用
@@ -77,7 +77,7 @@ chsh -s /usr/bin/zsh
 2. 安装环境依赖项, 某些功能依赖于下面的环境, **可选**
 ```zsh
 # Arch Linux 直接安装
-yay/pacman -S fd exa bat fzf ueberzug lsd git
+yay/pacman -S fd exa bat fzf ueberzug lsd git lua
 
 # 其他 Linux 发行版以各自对应的包管理器为准进行安装
 ```
@@ -88,7 +88,7 @@ yay/pacman -S fd exa bat fzf ueberzug lsd git
 git clone https://github.com/pomeluce/dzs.git ~/.config/dzs
 
 # 执行如下命令进行配置
-echo 'source ~/.config/dzs/init.zsh >> ~/.zshrc'
+echo 'source ~/.config/dzs/init.zsh' >> ~/.zshrc
 
 # 执行如下命令重新加载终端环境
 source ~/.zshrc
