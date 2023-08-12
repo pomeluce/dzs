@@ -19,6 +19,7 @@ alias gtl='git tag -n --sort=taggerdate'
 alias grv='git remote -v'
 alias grs='git remote set-url origin ${1}'
 alias gra='git remote add origin ${1}'
+alias gfr='git fetch --all && git reset --hard origin && git pull'
 ga() { git add "$*" }
 gt() { git tag -a $1 -m "$2" }
 gm() { git commit -m "$*" }
