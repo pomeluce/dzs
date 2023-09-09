@@ -26,6 +26,7 @@ alias lnk='ln -s'
 alias rlnk='ln -snf'
 
 # deveop commands alias
+command -v nvim &> /dev/null && alias v='nvim'
 command -v nvim &> /dev/null && alias vim='nvim'
 command -v npm &> /dev/null && alias n='npm'
 command -v pnpm &> /dev/null && alias p='pnpm'
