@@ -26,6 +26,7 @@ alias rd='rmdir'
 alias rmf='rm -rf'
 alias lnk='ln -s'
 alias rlnk='ln -snf'
+alias ds='du -sh ./* | sort -hr'
 
 # deveop commands alias
 command -v nvim &> /dev/null && alias v='nvim'

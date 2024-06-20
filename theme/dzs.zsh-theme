@@ -46,4 +46,4 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 add-zsh-hook precmd vcs_info
 
 # dzs prompt style.
-PROMPT=$'\n%{$dzs_limegreen%}%~%{$dzs_reset_color%} ${vcs_info_msg_0_}\n%(?.%{$dzs_limegreen%}.%{$dzs_red%})%(!.#.)%{$dzs_reset_color%} '
+PROMPT=$'\n%{$dzs_limegreen%}%~%{$dzs_reset_color%} ${vcs_info_msg_0_}\n%(?.%{$dzs_limegreen%}.%{$dzs_red%})%(!.#.)%{$dzs_reset_color%} '
