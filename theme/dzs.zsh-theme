@@ -5,15 +5,19 @@ autoload -Uz vcs_info
 
 # Use True color (24-bit) if available.
 if [[ "${terminfo[colors]}" -ge 256 ]]; then
-    dzs_turquoise="%F{73}"
-    dzs_orange="%F{179}"
-    dzs_red="%F{167}"
-    dzs_limegreen="%F{107}"
+  dzs_dark="%F{0}"
+  dzs_turquoise="%F{73}"
+  dzs_orange="%F{179}"
+  dzs_red="%F{167}"
+  dzs_limegreen="%F{107}"
+  dzs_bg_limegreen="%K{107}"
 else
-    dzs_turquoise="%F{cyan}"
-    dzs_orange="%F{yellow}"
-    dzs_red="%F{red}"
-    dzs_limegreen="%F{green}"
+  dzs_dark="%F{black}"
+  dzs_turquoise="%F{cyan}"
+  dzs_orange="%F{yellow}"
+  dzs_red="%F{red}"
+  dzs_limegreen="%F{green}"
+  dzs_bg_limegreen="%F{green}"
 fi
 
 # Reset color.
@@ -36,14 +40,14 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 # Check for untracked files.
 +vi-git-untracked() {
-    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-            git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
-        hook_com[staged]+="%{$dzs_reset_color%} %{$dzs_red%}?"
-    fi
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+    git status --porcelain | grep --max-count=1 '^??' &> /dev/null; then
+    hook_com[staged]+="%{$dzs_reset_color%} %{$dzs_red%}?"
+  fi
 }
 
 # Executed before each prompt.
 add-zsh-hook precmd vcs_info
 
 # dzs prompt style.
-PROMPT=$'\n%{$dzs_limegreen%}%~%{$dzs_reset_color%} ${vcs_info_msg_0_}\n%(?.%{$dzs_limegreen%}.%{$dzs_red%})%(!.#.)%{$dzs_reset_color%} '
+PROMPT=$'\n%{$dzs_limegreen%}%{$dzs_bg_limegreen%}%{$dzs_dark%}%n%f%k%{$dzs_limegreen%} %~%{$dzs_reset_color%} ${vcs_info_msg_0_}\n%(?.%{$dzs_limegreen%}.%{$dzs_red%})%(!.#.)%{$dzs_reset_color%} '
