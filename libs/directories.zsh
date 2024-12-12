@@ -62,3 +62,19 @@ else
   alias ll='ls -lh'
   alias la='ls -lAh'
 fi
+
+# define last command
+LAST_CMD=""
+
+precmd() {
+  precmd() {
+    if [[ "$LAST_CMD" != "clear" && "$LAST_CMD" != "reset" && "$LAST_CMD" != "tput clear" ]]; then
+      echo  # add new line
+    fi
+  }
+}
+
+# preexec hook, set last command
+preexec() {
+  LAST_CMD="$1"
+}
