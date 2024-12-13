@@ -1,3 +1,7 @@
+# Load add-zsh-hook
+autoload -Uz add-zsh-hook
+# disable autocorrect
+unsetopt correct
 # tab 补全
 autoload -U compinit && compinit
 # Load all stock functions (from $fpath files) called below.
@@ -38,8 +42,28 @@ dzs_history_show() {
 
 # 进入终端时, 自动 cd 到上次的目录
 dzs_in_lastdir() {
-    chpwd_hook() { echo $PWD > $DZS/cache/currentdir }
-    add-zsh-hook -Uz chpwd chpwd_hook
-    currentdir=$(cat $DZS/cache/currentdir 2>/dev/null)
-    [ -d "$currentdir" ] && cd $currentdir
+  chpwd_hook() { echo $PWD > $DZS/cache/currentdir }
+  add-zsh-hook -Uz chpwd chpwd_hook
+  currentdir=$(cat $DZS/cache/currentdir 2>/dev/null)
+  [ -d "$currentdir" ] && cd $currentdir
 }
+
+
+# define last command
+LAST_CMD=""
+IS_FIRST=true
+
+dzs_precmd_hook() {
+  if [[ "$IS_FIRST" != true && "$LAST_CMD" != "clear" && "$LAST_CMD" != "reset" && "$LAST_CMD" != "tput clear" ]]; then
+    echo  # add new line
+  fi
+  IS_FIRST=false
+}
+
+# preexec hook, set last command
+dzs_preexec_hook() {
+  LAST_CMD="$1"
+}
+
+add-zsh-hook precmd dzs_precmd_hook
+add-zsh-hook preexec dzs_preexec_hook

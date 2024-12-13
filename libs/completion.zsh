@@ -11,4 +11,3 @@ unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 
 # automatically load bash completion functions
 autoload -U +X bashcompinit && bashcompinit
-
