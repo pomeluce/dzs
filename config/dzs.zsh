@@ -1,6 +1,4 @@
-if [[ $P10K != true ]]; then
-  source $DZS/theme/dzs.zsh-theme
-fi
+source $DZS/theme/dzs.zsh-theme
 source $DZS/libs/dzs.zsh
 source $DZS/libs/completion.zsh
 source $DZS/libs/directories.zsh
