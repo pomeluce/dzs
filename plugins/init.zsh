@@ -52,7 +52,7 @@ function _load_fzf() {
 }
 
 function _load_p10k() {
-  if [[ $P10K == true && -d $DZS/plugins/powerlevel10k ]]; then
+  if [[ -d $DZS/plugins/powerlevel10k ]]; then
     source $DZS/plugins/powerlevel10k/powerlevel10k.zsh-theme
   fi
   unset -f _load_p10k
@@ -81,8 +81,8 @@ function _load_zsh-syntax-highlighting() {
 
 add-zsh-hook precmd _load_extract
 add-zsh-hook precmd _load_fzf
-add-zsh-hook precmd _load_p10k
 add-zsh-hook precmd _load_sudo
 add-zsh-hook precmd _load_z
 add-zsh-hook precmd _load_zsh-syntax-highlighting
 _load_zsh-autosuggestions
+[[ $P10K == true ]] && _load_p10k
