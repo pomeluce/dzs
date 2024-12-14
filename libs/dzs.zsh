@@ -47,25 +47,3 @@ dzs_in_lastdir() {
   currentdir=$(cat $DZS/cache/currentdir 2>/dev/null || echo "")
   [ -d "$currentdir" ] && cd $currentdir
 }
-
-
-# define last command
-LAST_CMD=""
-IS_FIRST=true
-
-dzs_precmd_hook() {
-  if [[ $IS_FIRST == true || $LAST_CMD == "clear" || $LAST_CMD == "reset" || $LAST_CMD == "tput clear" ]]; then
-    LAST_CMD="" # reset
-  else
-    echo  # add new line
-  fi
-  IS_FIRST=false
-}
-
-# preexec hook, set last command
-dzs_preexec_hook() {
-  LAST_CMD="$1"
-}
-
-add-zsh-hook precmd dzs_precmd_hook
-add-zsh-hook preexec dzs_preexec_hook
