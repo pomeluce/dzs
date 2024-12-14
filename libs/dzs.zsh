@@ -54,7 +54,9 @@ LAST_CMD=""
 IS_FIRST=true
 
 dzs_precmd_hook() {
-  if [[ $IS_FIRST != true && "$LAST_CMD" != "clear" && "$LAST_CMD" != "reset" && "$LAST_CMD" != "tput clear" ]]; then
+  if [[ $IS_FIRST == true || $LAST_CMD == "clear" || $LAST_CMD == "reset" || $LAST_CMD == "tput clear" ]]; then
+    LAST_CMD="" # reset
+  else
     echo  # add new line
   fi
   IS_FIRST=false
