@@ -3,7 +3,7 @@ if [[ ! -d $DZS/plugins/fzf-tab ]]; then
   git clone 'https://github.com/Aloxaf/fzf-tab.git' $DZS/plugins/fzf-tab &>/dev/null
 fi
 
-if [[ $P10K && ! -d $DZS/plugins/powerlevel10k ]]; then
+if [[ $P10K == true && ! -d $DZS/plugins/powerlevel10k ]]; then
   echo 'downloading and installing powerlevel10k'
   git clone 'https://github.com/romkatv/powerlevel10k.git' $DZS/plugins/powerlevel10k &>/dev/null
 fi

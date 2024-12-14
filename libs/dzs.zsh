@@ -44,7 +44,7 @@ dzs_history_show() {
 dzs_in_lastdir() {
   chpwd_hook() { echo $PWD > $DZS/cache/currentdir }
   add-zsh-hook -Uz chpwd chpwd_hook
-  currentdir=$(cat $DZS/cache/currentdir 2>/dev/null)
+  currentdir=$(cat $DZS/cache/currentdir 2>/dev/null || echo "")
   [ -d "$currentdir" ] && cd $currentdir
 }
 
@@ -54,7 +54,7 @@ LAST_CMD=""
 IS_FIRST=true
 
 dzs_precmd_hook() {
-  if [[ "$IS_FIRST" != true && "$LAST_CMD" != "clear" && "$LAST_CMD" != "reset" && "$LAST_CMD" != "tput clear" ]]; then
+  if [[ $IS_FIRST != true && "$LAST_CMD" != "clear" && "$LAST_CMD" != "reset" && "$LAST_CMD" != "tput clear" ]]; then
     echo  # add new line
   fi
   IS_FIRST=false
